@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<table border="10" cellpadding="20px">
+ <thead>
+    <th>Name</th>
+    <th>Value1</th>
+    <th>value2</th>
+    <th>value3</th>
+ </thead>
+{% for add in add_check %}
+ <tr>
+     <td>{{ add.name }}</td>
+     <td>{{ add.input1 }}</td>
+     <td>{{ add.input2 }}</td>
+     <td>{{ add.sum_val }}</td>
+ </tr>
+ {% endfor %}
+</table>
+
+{% endblock  %}

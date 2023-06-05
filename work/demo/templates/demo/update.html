@@ -1,0 +1,13 @@
+{% extends "index.html" %}
+
+{% block content %}
+<form action="" method="POST" name="register">
+    {% csrf_token %}
+    <input type="text" name="id" value="{{get_student.id}}"readonly><br><br>
+    <input type="text" name="name" value="{{get_student.name}}"><br><br>
+    <input type="text" name="roll" value="{{get_student.roll}}"><br><br>
+    <input type="text" name="mark" value="{{get_student.mark}}"><br><br>
+    <input type="submit" value="Click Me" onclick="return validateForm()">
+    
+</form><br>
+{% endblock %}

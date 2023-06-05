@@ -1,0 +1,15 @@
+{% extends 'index.html' %}
+{% block content %}
+<h1>Your Profile</h1>
+<br>
+<br>
+
+<br>
+<center>
+<p> Username: {{user.username}} </p>
+<p> password: {{user.password}} </p>
+
+<hr>
+<a href=" {% url 'user_change' %} " class ="btn btn-primary">Edit</a>
+</center>
+{% endblock  %}

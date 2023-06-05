@@ -1,0 +1,25 @@
+{% extends 'index.html' %} 
+
+{% load crispy_forms_tags %}
+{% block content %}
+{% if registered %}
+<h1>Congrats</h1>
+
+
+{% else %}
+<h1>register</h1>
+
+<form method="POST">
+ 
+ {% csrf_token %}
+
+{{ user_form|crispy }}
+<center>
+    <br>
+    <br>
+<button type="submit" class="btn btn-lg btn-dark">register</button>
+</center>
+</form>
+
+{% endif %}
+{% endblock  %}

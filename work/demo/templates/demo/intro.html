@@ -1,0 +1,45 @@
+{% extends 'index.html' %}
+{% block content %}
+<form action="" method="post">
+
+    {% csrf_token %}
+    <input type="text" name="name" placeholder="Enter Name" class="form-control"><br><br>
+    <input type="text" name="roll" placeholder="Enter Roll" class="form-control"><br><br>
+    <input type="text" name="mark" placeholder="Enter Mark" class="form-control"><br><br>
+    
+    <center><input type="submit" class="btn btn-outline-dark" value="submit" onclick="return validateForm()"></center>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    {% if msg %}
+        {{msg}}
+    
+        {% endif %}
+    </form>
+    
+    <script>
+        function validateForm(){
+            //RE pattern
+            var regname = /^[A-Za-z]*$/;
+            var name = document.forms["register"]["name"].value;
+    
+            //test() will return boolean
+            if(!regname.test(name)){
+                alert("Only alphabets");
+                return false;
+            }
+    
+            if(name.length == ""){
+                alert("Please Enter your Name before submitting");
+                return false;
+            }
+            if(name.length < 2){
+            alert("Please Enter a valid Name");
+            return false;
+        }
+            return true;
+        }
+    </script>
+    {% endblock %}

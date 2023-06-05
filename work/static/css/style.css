@@ -1,0 +1,9 @@
+.coverpic{
+    background: url("/static/images/686132.jpg");
+    background-repeat: no-repeat;
+    height: 100%;
+    background-size: cover; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

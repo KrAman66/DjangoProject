@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<h1>Change Profile</h1>
+{% if changed %}Profile Picture Change Successfully{% endif %}
+<form action="on click" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form | crispy}}
+
+    
+        <br>
+        <br>
+    <button type="submit" class="btn btn-lg btn-dark">Add Picture</button>
+    <br>
+    
+    <div><small id="hint_id_password" class="form-text text-muted">Change Password<a href="../password/">click here</a></small></div>
+</form>
+{% endblock %}

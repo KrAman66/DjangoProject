@@ -1,0 +1,26 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<table border="1" cellpadding="10px" class="table table-dark table-striped">
+    <thead>
+        <th>id</th>
+        <th>Name</th>
+        <th>Roll</th>
+        <th>Mark</th>
+        <th>modify</th>
+        <th>erase</th>
+    </thead>
+    {% for student in students %}
+    <tr>
+        <td>{{student.id}}</td>
+        <td>{{student.name}}</td>
+        <td>{{student.roll}}</td>
+        <td>{{student.mark}}</td>
+        <td><a href="{% url 'update' student.id %}" class="btn btn-success">edit</a></td>
+        <td><a href="{% url 'delete' student.id %}" class="btn btn-danger">delete</a></td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}class="table-dark"
